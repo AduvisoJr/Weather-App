@@ -66,29 +66,31 @@ function append3(data3){
 
 
 function append(data) {
-
-
-
-    let card1=document.getElementById("card1")
+    let card1 = document.getElementById("card1");
     card1.innerHTML = null;
     let h3 = document.createElement("h3");
     h3.innerText = data.name;
 
+    // Convert Kelvin to Celsius
+    let currentTempCelsius = (data.main.temp - 273.15).toFixed(2);
+    let maxTempCelsius = (data.main.temp_max - 273.15).toFixed(2);
+    let minTempCelsius = (data.main.temp_min - 273.15).toFixed(2);
+
     let p = document.createElement("p");
-    p.innerText = `Current Temp : ${data.main.temp}`;
+    p.innerText = `Current Temp : ${currentTempCelsius} °C`;
 
     let p1 = document.createElement("p");
-    p1.innerText = `Max temp : ${data.main.temp_max}`;
+    p1.innerText = `Max temp : ${maxTempCelsius} °C`;
 
     let p2 = document.createElement("p");
-    p2.innerText = `Min temp : ${data.main.temp_min}`
+    p2.innerText = `Min temp : ${minTempCelsius} °C`;
 
     card1.append(h3, p, p1, p2);
 
-
     let iframe = document.getElementById("gmap_canvas");
-    iframe.src = `https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+    iframe.src = `https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 }
+
 
 
 
@@ -115,4 +117,3 @@ function append4(_data4){
 
 
 }
-
