@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        * {
+            background-color: #ffffff; /* Light gray background */
+            color: #333333; /* Dark gray text */
+            font-family: 'Poppins', sans-serif;
+        }
+        #weekforcast {
+            width: 70%;
+            margin: auto;
+            height: 250px;
+            border: 1px solid #cccccc; /* Light gray border */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(1, 250px);
+            gap: 20px;
+        }
+        #weekforcast > div {
+            border: 1px solid #e0e0e0; /* Light gray border */
+            background-color: #ffffff; /* White background */
+        }
+        #weekforcast > div > h3 {
+            text-align: center;
+            margin-top: 5%;
+            color: #333; /* Dark gray text */
+        }
+        #weekforcast > div > img {
+            margin-left: 30%;
+        }
+        #citymap > div {
+            background-color: #0056b3; /* Blue background */
+        }
+        #citymap {
+            width: 70%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 390px);
+            gap: 10px;
+        }
+        iframe {
+            height: 390px;
+            border: 0px;
+        }
+        input {
+            margin-left: 40%;
+            padding: 10px 40px;
+            border: 1px solid #e0e0e0; /* Light gray border */
+            color: #333; /* Dark gray text */
+            font-size: 20px;
+        }
+        button {
+            padding: 10px 40px;
+            color: white;
+            background-color: #0056b3; /* Blue background */
+            border: none;
+            border-radius: 20px;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 300px);
+        }
+        #container > div {
+            background-color: #007bff; /* Blue background */
+        }
+        #card1 > h3, #card2 > h2, #card2 > h3, #card1 > p {
+            color: white;
+        }
+        #card2 > img {
+            margin-left: 5%;
+        }
+	.logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+	h1, h2, h3, h4, h5, h6, p, a, input[type="text"]{
+    		background-color: transparent; /* Removes any background color from text elements */
+    		text-shadow: none; /* Removes any text shadow */
+}
+
+/* Specific styles for input and button to maintain their design */
+input[type="text"] {
+    /* ... existing input styles ... */
+    background-color: #f8f8f8; /* Off-white background for input */
+}
+    </style>
+</head>
+<body>
+	<img src="https://scontent.fmnl31-1.fna.fbcdn.net/v/t1.15752-9/440797402_979374600296315_1186638743881937364_n.png?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGA6fhc5WyiKpkdUxdLLWLJ9yoCyxlien33KgLLGWJ6fXClFqouCZVnFDVt5VW-648yIwXY1fTDmhvnGd9emkvL&_nc_ohc=lfRvn9rnSkoQ7kNvgFWxkio&_nc_ht=scontent.fmnl31-1.fna&oh=03_Q7cD1QFYbYHxs7a7TBdIzU1KMnSKWgNaoamoq4ag5shO0dK6VA&oe=66654F24" alt="Logo" class="logo">
+    <input type="text" id="city" placeholder="Enter City">
+    <button onClick="getData(),getData2(),getData3()">Search Weather</button>
+    <div id="citymap">
+        <div id="container">
+            <div id="card1"></div>
+            <div id="card2"></div>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe style="background-color:#007bff;" width="600" height="500" id="gmap_canvas"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="weekforcast"></div>
+</body>
+</html>
+<script src="main.js"></script>
