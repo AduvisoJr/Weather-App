@@ -1,162 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <title>BNHS Weather App</title>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>Weather Forecast</title>
     <style>
-    * {
-        background-color: rgb(255, 255, 255); /* White background */
-    }
-    #weekforcast {
-        width: 70%;
-        margin: auto;
-        height: 250px;
-        border: 1px solid #ccc; /* Light grey border */
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(1, 250px);
-        gap: 20px;
-        background-color: #f0f0f0; /* Light grey background */
-    }
-    #weekforcast > div {
-        border: 1px solid #ccc; /* Light grey border */
-        color: #333; /* Dark grey text */
-        background-color: #ffffff; /* White background */
-    }
-    #weekforcast > div > h3 {
-        text-align: center;
-        margin-top: 5%;
-        color: #333; /* Dark grey text */
-        font-family: 'Poppins', sans-serif;
-        background-color: #ffffff; /* White background */
-    }
-    #weekforcast > div > img {
-        max-width:10%;
-        height: auto;
-        display:block;
-        margin: 0 auto;
-        margin-left: 30%;
-        background-color: #ffffff; /* White background */
-    }
-    
-    #citymap > div {
-        background-color: #e0e0e0; /* Light grey background */
-    }
-    #citymap {
-        width: 70%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 390px);
-        gap: 10px;
-    }
-    iframe {
-        height: 390px;
-        border: 0px;
-    }
-    #container {
-        border: 0px solid;
-    }
-    #container > div {
-    background-size: cover; /* This ensures the background covers the entire area of the card */
-    background-position: center; /* This centers the background image */
-    }
-    #container > div > h3 {
-        font-size: 300%;
-        margin-left: 5%;
-        font-family: 'Poppins', sans-serif;
-        color: #333; /* Dark grey text */
-        background-color: #e0e0e0; /* Light grey background */
-    }
-    #container > div > p {
-        font-size: 150%;
-        margin-left: 5%;
-        font-family: 'Poppins', sans-serif;
-        color: #333; /* Dark grey text */
-        background-color: #e0e0e0; /* Light grey background */
-    }
-    input {
-        margin-left: 40%;
-        padding: 10px 40px 10px 40px;
-        border-top: none;
-        border-right: none;
-        border-left: none;
-        color: #333; /* Dark grey text */
-        font-size: 20px;
-        font-family: 'Poppins', sans-serif;
-        background-color: #ffffff; /* White background */
-    }
-    button {
-        padding: 10px 40px 10px 40px;
-        color: #ffffff; /* White text */
-        background-color: #007bff; /* Bootstrap primary blue */
-        border-radius: 20px;
-    }
-    #container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 300px);
-    }
-    #container > div {
-        background-color: #ffffff; /* White background */
-    }
-    #card1 > h3,
-    #card2 > h2,
-    #card2 > h3,
-    #card1 > p {
-        color: #333; /* Dark grey text */
-        background-color: #e0e0e0; /* Light grey background */
-        font-family: 'Poppins', sans-serif;
-    }
-    #search-and-logo {
-        width: 50%; /* Adjust this value to make the image smaller */
-        height: auto; /* This maintains the aspect ratio of the image */
-        display: block; /* This prevents inline spacing issues */
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #logo {
-        margin-right: 10px; /* Adjust the spacing as needed */
-    }
-</style>
-
+        * {
+            background-color: #f5f7fa; /* Light gray background */
+            color: #333; /* Dark gray text */
+            font-family: 'Poppins', sans-serif;
+        }
+        #weekforcast {
+            width: 70%;
+            margin: auto;
+            height: 250px;
+            border: 1px solid #e0e0e0; /* Light gray border */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(1, 250px);
+            gap: 20px;
+            background-color: #ffffff; /* White background */
+        }
+        #weekforcast > div {
+            border: 1px solid #e0e0e0; /* Light gray border */
+            background-color: #ffffff; /* White background */
+        }
+        #weekforcast > div > h3 {
+            text-align: center;
+            margin-top: 5%;
+            color: #333; /* Dark gray text */
+        }
+        #weekforcast > div > img {
+            margin-left: 30%;
+        }
+        #citymap > div {
+            background-color: #007bff; /* Blue background */
+        }
+        #citymap {
+            width: 70%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 390px);
+            gap: 10px;
+        }
+        iframe {
+            height: 390px;
+            border: 0px;
+        }
+        input {
+            margin-left: 40%;
+            padding: 10px 40px;
+            border: 1px solid #e0e0e0; /* Light gray border */
+            color: #333; /* Dark gray text */
+            font-size: 20px;
+        }
+        button {
+            padding: 10px 40px;
+            color: white;
+            background-color: #007bff; /* Blue background */
+            border: none;
+            border-radius: 20px;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 300px);
+        }
+        #container > div {
+            background-color: #007bff; /* Blue background */
+        }
+        #card1 > h3, #card2 > h2, #card2 > h3, #card1 > p {
+            color: white;
+        }
+        #card2 > img {
+            margin-left: 5%;
+        }
+	.logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+    </style>
 </head>
-
 <body>
- <input type="text" id="city" placeholder="Enter City">
-        <button onClick="getData(),getData2(),getData3()">Search Weather</button>
-    <div id="search-and-logo">
-        <img src="https://scontent.fmnl31-1.fna.fbcdn.net/v/t1.15752-9/440797402_979374600296315_1186638743881937364_n.png?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGA6fhc5WyiKpkdUxdLLWLJ9yoCyxlien33KgLLGWJ6fXClFqouCZVnFDVt5VW-648yIwXY1fTDmhvnGd9emkvL&_nc_ohc=lfRvn9rnSkoQ7kNvgFWxkio&_nc_ht=scontent.fmnl31-1.fna&oh=03_Q7cD1QFYbYHxs7a7TBdIzU1KMnSKWgNaoamoq4ag5shO0dK6VA&oe=66654F24" alt="BNHS  Logo" id="logo" />
-        
-    </div>
-    
+	<img src="https://scontent.fmnl31-1.fna.fbcdn.net/v/t1.15752-9/440797402_979374600296315_1186638743881937364_n.png?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGA6fhc5WyiKpkdUxdLLWLJ9yoCyxlien33KgLLGWJ6fXClFqouCZVnFDVt5VW-648yIwXY1fTDmhvnGd9emkvL&_nc_ohc=lfRvn9rnSkoQ7kNvgFWxkio&_nc_ht=scontent.fmnl31-1.fna&oh=03_Q7cD1QFYbYHxs7a7TBdIzU1KMnSKWgNaoamoq4ag5shO0dK6VA&oe=66654F24" alt="Logo" class="logo">
+    <input type="text" id="city" placeholder="Enter City">
+    <button onClick="getData(),getData2(),getData3()">Search Weather</button>
     <div id="citymap">
-    <div id="container">
-        <div id="card1"></div>
-        <div id="card2"></div>
-    </div>
-
-    <div class="mapouter" >
-        <div class="gmap_canvas " ><iframe  style="background-color:rgb(0, 162, 255) ;" width="600" height="500" id="gmap_canvas"
-                                            frameborder="0"
-                                            scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <div id="container">
+            <div id="card1"></div>
+            <div id="card2"></div>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe style="background-color:#007bff;" width="600" height="500" id="gmap_canvas"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
         </div>
     </div>
-</div>
-<div id="weekforcast" >
-
-
-</div>
-
+    <div id="weekforcast"></div>
 </body>
-
 </html>
 <script src="main.js"></script>
