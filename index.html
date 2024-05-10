@@ -37,9 +37,14 @@
         background-color: #ffffff; /* White background */
     }
     #weekforcast > div > img {
+        max-width:100%;
+        height: auto;
+        display:block;
+        margin: 0 auto;
         margin-left: 30%;
         background-color: #ffffff; /* White background */
     }
+    
     #citymap > div {
         background-color: #e0e0e0; /* Light grey background */
     }
@@ -57,6 +62,10 @@
     }
     #container {
         border: 0px solid;
+    }
+    #container > div {
+    background-size: cover; /* This ensures the background covers the entire area of the card */
+    background-position: center; /* This centers the background image */
     }
     #container > div > h3 {
         font-size: 300%;
