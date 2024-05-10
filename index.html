@@ -10,152 +10,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-            *{
-                background-color:rgb(0, 0, 0) ;
-            }
-            #weekforcast{
-                width: 70%;
-                margin: auto;
-                height: 250px;
-                border: 1px solid white;
-                display: grid;
-                grid-template-columns: repeat(5,1fr);
-                grid-template-rows: repeat(1,250px);
-                gap: 20px;
-                background-color: rgb(31, 76, 123);
+    * {
+        background-color: rgb(255, 255, 255); /* White background */
+    }
+    #weekforcast {
+        width: 70%;
+        margin: auto;
+        height: 250px;
+        border: 1px solid #ccc; /* Light grey border */
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(1, 250px);
+        gap: 20px;
+        background-color: #f0f0f0; /* Light grey background */
+    }
+    #weekforcast > div {
+        border: 1px solid #ccc; /* Light grey border */
+        color: #333; /* Dark grey text */
+        background-color: #ffffff; /* White background */
+    }
+    #weekforcast > div > h3 {
+        text-align: center;
+        margin-top: 5%;
+        color: #333; /* Dark grey text */
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff; /* White background */
+    }
+    #weekforcast > div > img {
+        margin-left: 30%;
+        background-color: #ffffff; /* White background */
+    }
+    #citymap > div {
+        background-color: #e0e0e0; /* Light grey background */
+    }
+    #citymap {
+        width: 70%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 390px);
+        gap: 10px;
+    }
+    iframe {
+        height: 390px;
+        border: 0px;
+    }
+    #container {
+        border: 0px solid;
+    }
+    #container > div > h3 {
+        font-size: 300%;
+        margin-left: 5%;
+        font-family: 'Poppins', sans-serif;
+        color: #333; /* Dark grey text */
+        background-color: #e0e0e0; /* Light grey background */
+    }
+    #container > div > p {
+        font-size: 150%;
+        margin-left: 5%;
+        font-family: 'Poppins', sans-serif;
+        color: #333; /* Dark grey text */
+        background-color: #e0e0e0; /* Light grey background */
+    }
+    input {
+        margin-left: 40%;
+        padding: 10px 40px 10px 40px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        color: #333; /* Dark grey text */
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffffff; /* White background */
+    }
+    button {
+        padding: 10px 40px 10px 40px;
+        color: #ffffff; /* White text */
+        background-color: #007bff; /* Bootstrap primary blue */
+        border-radius: 20px;
+    }
+    #container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 300px);
+    }
+    #container > div {
+        background-color: #ffffff; /* White background */
+    }
+    #card1 > h3,
+    #card2 > h2,
+    #card2 > h3,
+    #card1 > p {
+        color: #333; /* Dark grey text */
+        background-color: #e0e0e0; /* Light grey background */
+        font-family: 'Poppins', sans-serif;
+    }
+    #search-and-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #logo {
+        margin-right: 10px; /* Adjust the spacing as needed */
+    }
+</style>
 
-            }
-            #weekforcast>div{
-                border: 1px solid;
-                color: black;
-                background-color: rgb(186, 221, 243);
-                /* background-color: transparent; */
-            }
-            #weekforcast>div>h3{
-                text-align: center;
-                margin-top: 5%;
-                color: white;
-                background-color: rgb(186, 221, 243);
-                color: black;
-                font-family: 'Poppins', sans-serif;
-                background-color: rgb(186, 221, 243);
-            }
-            #weekforcast>div>img{
-                margin-left: 30%;
-                background-color: rgb(186, 221, 243);
-            }
-            #citymap>div{
-                background-color:rgb(0, 162, 255) ;
-            }
-            #citymap{
-
-                width: 70%;
-                margin: auto;
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                grid-template-rows: repeat(1,390px);
-                gap: 10px;
-            }
-            iframe{
-                height: 390px;
-                border: 0px;
-            }
-            #container{
-                border: 0px solid;
-
-            }
-             #container>div>h3{
-                font-size: 300%;
-                margin-left: 5%;
-                font-family: 'Poppins', sans-serif;
-                color: white;
-                background-color:rgb(0, 162, 255)
-            }
-            #container>div>p{
-                font-size: 150%;
-                margin-left: 5%;
-                font-family: 'Poppins', sans-serif;
-                color: white;
-                background-color:rgb(0, 162, 255) */
-
-
-             } 
-            #weekforcast>div{
-                border: 0px solid;
-
-            }
-            input{
-                margin-left: 40%;
-                padding: 10px 40px 10px 40px;
-                border-top: none;
-                border-right: none;
-                border-left:none;
-                color: white;
-                font-size: 20px;
-                font-family: 'Poppins', sans-serif;
-
-            }
-            button{
-                padding: 10px 40px 10px 40px;
-                color: white;
-                background-color: rgb(0, 162, 255);
-                border-radius: 20px;
-            }
-            #container{
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                grid-template-rows: repeat(1,300px);
-            }
-            #container>div{
-                background-color:rgb(255, 255, 255)
-            }
-            /* #card2{
-                border: 1px solid;
-                padding-top: 5%;
-            }
-            #card1{
-                border: 1px solid;
-            } */
-            #card1>h3{
-                color: white;
-                background-color:rgb(0, 162, 255);
-                font-size: 50px;
-                margin-left: 5%;
-                font-family: 'Poppins', sans-serif;
-            }
-            #card2>h2{
-                background-color:rgb(0, 162, 255);
-                font-size: 30px;
-                color: white;
-                font-family: 'Poppins', sans-serif;
-
-            }
-            #card2>img{
-                background-color:rgb(0, 162, 255);
-                margin-left: 5%;
-            }
-            #card2>h3{
-                color: white;
-                background-color:rgb(0, 162, 255);
-                font-size: 20px;
-                font-family: 'Poppins', sans-serif;
-                margin-left: 5%;
-            }
-            #card1>p{
-                color: white;
-                background-color:rgb(0, 162, 255);
-                margin-left: 5%;
-                font-family: 'Poppins', sans-serif;
-            }
-            #search-and-logo {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            #logo {
-                margin-right: 10px; /* Adjust the spacing as needed */
-            }
-        </style>
 </head>
 
 <body>
