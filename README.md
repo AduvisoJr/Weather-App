@@ -21,7 +21,7 @@
 
 ## 🔴 Live Demo
 
-- [Weather App - github](https://yogeshsaini21.github.io/weather-Application/)
+- [Weather App - github]([https://aduvisojr.github.io/Weather-App/])
 
 
 
