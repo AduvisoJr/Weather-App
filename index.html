@@ -147,13 +147,28 @@
                 margin-left: 5%;
                 font-family: 'Poppins', sans-serif;
             }
+            #search-and-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #logo {
+                margin-right: 10px; /* Adjust the spacing as needed */
+            }
         </style>
 </head>
 
 <body>
 <input type="text" id="city" placeholder="Enter City">
 <button onClick="getData(),getData2(),getData3()">Search Weather</button>
-<div id="citymap">
+
+     <div id="search-and-logo">
+        <img src="YOUR_LOGO_URL_HERE" alt="BNHS Weather App Logo" id="logo" />
+        <input type="text" id="city" placeholder="Enter City">
+        <button onClick="getData(),getData2(),getData3()">Search Weather</button>
+    </div>
+    
+    <div id="citymap">
     <div id="container">
         <div id="card1"></div>
         <div id="card2"></div>
