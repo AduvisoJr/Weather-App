@@ -8,7 +8,7 @@
 
 > It was built to demonstrate the use of **async/await** and **Promises** in javascript to write asynchronous code as well as use **fetch** to retrieve data from an API.
 
-> Done in 3 hours as a challenge.
+> Done in 3 hours (with less than 250 lines of code) as a challenge.
 
 ### Screenshots
 
