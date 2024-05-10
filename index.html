@@ -7,20 +7,19 @@
     <title>Weather Forecast</title>
     <style>
         * {
-            background-color: #f5f7fa; /* Light gray background */
-            color: #333; /* Dark gray text */
+            background-color: #ffffff; /* Light gray background */
+            color: #333333; /* Dark gray text */
             font-family: 'Poppins', sans-serif;
         }
         #weekforcast {
             width: 70%;
             margin: auto;
             height: 250px;
-            border: 1px solid #e0e0e0; /* Light gray border */
+            border: 1px solid #cccccc; /* Light gray border */
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(1, 250px);
             gap: 20px;
-            background-color: #ffffff; /* White background */
         }
         #weekforcast > div {
             border: 1px solid #e0e0e0; /* Light gray border */
@@ -35,7 +34,7 @@
             margin-left: 30%;
         }
         #citymap > div {
-            background-color: #007bff; /* Blue background */
+            background-color: #0056b3; /* Blue background */
         }
         #citymap {
             width: 70%;
@@ -59,7 +58,7 @@
         button {
             padding: 10px 40px;
             color: white;
-            background-color: #007bff; /* Blue background */
+            background-color: #0056b3; /* Blue background */
             border: none;
             border-radius: 20px;
         }
@@ -84,6 +83,16 @@
             width: 100px; /* Adjust as needed */
             height: auto;
         }
+	h1, h2, h3, h4, h5, h6, p, a, input[type="text"]{
+    		background-color: transparent; /* Removes any background color from text elements */
+    		text-shadow: none; /* Removes any text shadow */
+}
+
+/* Specific styles for input and button to maintain their design */
+input[type="text"] {
+    /* ... existing input styles ... */
+    background-color: #f8f8f8; /* Off-white background for input */
+}
     </style>
 </head>
 <body>
